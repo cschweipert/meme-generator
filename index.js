@@ -13,7 +13,7 @@ function createMeme(event) {
   const bottomText = document.getElementById('bottomtext').value;
   let id = 0;
 
-  obj.id = id + 1;
+  // obj.id++;
   obj.imageLink = imageLink;
   obj.topText = topText;
   obj.bottomText = bottomText;
@@ -40,5 +40,9 @@ function createMeme(event) {
   bottom.innerHTML = obj.bottomText;
   bottom.className = 'text';
 
+  let deleteButton = memediv.appendChild(document.createElement('button'));
+  deleteButton.id = 'deleteButton';
+  deleteButton.innerHTML = 'Delete';
+  
   event.preventDefault();
 }
