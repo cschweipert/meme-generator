@@ -41,8 +41,18 @@ function createMeme(event) {
   bottom.className = 'text';
 
   let deleteButton = memediv.appendChild(document.createElement('button'));
-  deleteButton.id = 'deleteButton';
+  deleteButton.className = 'deleteButton';
   deleteButton.innerHTML = 'Delete';
-  
+  deleteButton.addEventListener('click', deleteMeme);
+
   event.preventDefault();
-}
+};
+
+function deleteMeme(event) {
+  alert('you deleted a meme');
+
+  let output = document.querySelector('#output');
+  let del = document.getElementById('memediv');
+  console.log(del)
+  output.removeChild(del)
+};
