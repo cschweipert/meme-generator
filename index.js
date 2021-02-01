@@ -2,21 +2,41 @@ const form = document
   .getElementById('form')
   .addEventListener('submit', createMeme);
 
+let imageLink;
+let topText;
+let bottomText;
+
+// const imageLink = document.getElementById('imglink').value;
+// const topText = document.getElementById('toptext').value;
+// const bottomText = document.getElementById('bottomtext').value;
+
+function myReset() {
+  form.reset();
+}
+
 let obj = {};
 let arr = [];
 
 function createMeme(event) {
-  alert('you clicked a button!');
+  // alert('you clicked a button!');
 
-  const imageLink = document.getElementById('imglink').value;
-  const topText = document.getElementById('toptext').value;
-  const bottomText = document.getElementById('bottomtext').value;
-  let id = 0;
+  // const imageLink = document.getElementById('imglink').value;
+  // const topText = document.getElementById('toptext').value;
+  // const bottomText = document.getElementById('bottomtext').value;
 
-  // obj.id++;
+  imageLink = document.getElementById('imglink').value;
+  topText = document.getElementById('toptext').value;
+  bottomText = document.getElementById('bottomtext').value;
+
   obj.imageLink = imageLink;
   obj.topText = topText;
   obj.bottomText = bottomText;
+
+  localStorage.setItem('imageLink', imageLink);
+  localStorage.setItem('topText', topText);
+  localStorage.setItem('bottomText', bottomText);
+
+  let useLink = localStorage.getItem('imageLink');
 
   arr.push(obj);
   console.log(arr);
@@ -32,7 +52,7 @@ function createMeme(event) {
   top.className = 'text';
 
   let image = memediv.appendChild(document.createElement('img'));
-  image.src = obj.imageLink;
+  image.src = useLink;
   image.className = 'image';
 
   let bottom = memediv.appendChild(document.createElement('h1'));
@@ -46,12 +66,12 @@ function createMeme(event) {
   deleteButton.addEventListener('click', deleteMeme);
 
   event.preventDefault();
-};
+}
 
 function deleteMeme(event) {
-  alert('you deleted a meme');
+  // alert('you deleted a meme');
 
   let output = document.querySelector('#output');
   let del = document.getElementById('memediv');
-  output.removeChild(del)
-};
+  output.removeChild(del);
+}
