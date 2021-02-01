@@ -119,25 +119,25 @@ button:hover {
 }
 
 .delete-button {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-  background-color: #276678;
-  color: #fff;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  color: #276678;
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 0;
   padding-bottom: 0;
-  margin-top: 5px;
-  border: 1px solid #276678;
-  border-radius: 4px;
+  border: 0px;
+  /* border-radius: 4px; */
   cursor: pointer;
   font-family: 'Quicksand', sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 900;
 }
 
 .delete-button:hover {
-  background-color: #fff;
-  color: #276678;
-  border: 1px solid #276678;
+  background: none;
+  color: #fff;
+  border: 0;
 }
