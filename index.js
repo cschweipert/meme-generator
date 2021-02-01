@@ -37,6 +37,8 @@ function createMeme(event) {
   localStorage.setItem('bottomText', bottomText);
 
   let useLink = localStorage.getItem('imageLink');
+  let useTop = localStorage.getItem('topText');
+  let useBottom = localStorage.getItem('bottomText');
 
   arr.push(obj);
   console.log(arr);
@@ -48,7 +50,7 @@ function createMeme(event) {
 
   let top = memediv.appendChild(document.createElement('h1'));
   top.id = 'top';
-  top.innerHTML = obj.topText;
+  top.innerHTML = useTop;
   top.className = 'text';
 
   let image = memediv.appendChild(document.createElement('img'));
@@ -57,7 +59,7 @@ function createMeme(event) {
 
   let bottom = memediv.appendChild(document.createElement('h1'));
   bottom.id = 'bottom';
-  bottom.innerHTML = obj.bottomText;
+  bottom.innerHTML = useBottom;
   bottom.className = 'text';
 
   let deleteButton = memediv.appendChild(document.createElement('button'));
